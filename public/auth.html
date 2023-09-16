@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">
+        <h1>Login Admin</h1>
+        <form id="loginAdmin">
+
+            <input type="email" id="email" placeholder="enter your email">
+            <input type="password" id="password" placeholder="enter your password">
+
+            <input type="submit">
+        </form>
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.js"></script>
+     <script>
+
+
+        document.getElementById('loginAdmin').addEventListener("submit",(e)=>{
+    e.preventDefault()
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value
+    console.log(email , password)
+    
+     axios.post("/adminlogin",{
+        email:email,
+        password:password
+    })
+    .then((res)=>{console.log(res)})
+.catch((e)=>{console.log(e)})
+
+})
+     </script>
+</body>
+</html>

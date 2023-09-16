@@ -1,0 +1,1127 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,400;1,500&display=swap'); */
+html{
+  overflow-x: hidden;
+}
+
+/* html, body{
+  padding: 0;
+  margin: 0;
+} */
+body{
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    /* overflow-x: auto; */
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --heading-color: #823596;
+    --second-color:  #d65ab1;
+}
+
+
+
+
+.navbar-light{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#navbar::before{
+    content: "";
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     opacity: 0.4;
+}
+
+
+.logo{
+    margin: 34px 44px;
+}
+
+.logo img{
+   height: 186px;
+   margin: -65px 6px;
+
+}
+#navbar{
+    position: relative;
+}
+ .navbar-light ul{
+    display: flex;
+}
+
+
+/* .navbar-light ul li{
+   
+    list-style: none;
+    padding: 10px 22px;
+    font-size: 1.1rem;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 250, 250);
+}
+.navbar-light ul li a:hover{
+    
+    color: red;
+
+} */ */
+#navbar .navbar-icon{
+  display: none;
+}
+/* Apply the button-like styling to navigation links */
+.navbar-light ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 15px; /* Same font size as the button */
+  padding: 10px 22px; /* Adjust padding as needed */
+  border-radius: 5px;
+  background-color: transparent; /* Set background to transparent */
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  color: white; /* Text color */
+  overflow: hidden; /* Hide overflow for text */
+}
+
+/* Apply the gradient effect on hover for the text */
+.navbar-light ul li a::before {
+  content: '';
+  width: 100%;
+  height: 4em;
+  background: linear-gradient(to right, #96098b 0%, #fcb6e7 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0); /* Initially hide the gradient by scaling it to zero horizontally */
+  transform-origin: left; /* Set the transform origin to the left edge */
+  transition: transform 0.5s ease; /* Transition the scaleX transform property */
+  z-index: -1;
+}
+
+/* Expand the gradient effect on hover */
+.navbar-light ul li a:hover::before {
+  transform: scaleX(1); /* Expand the gradient by scaling it to full width */
+}
+
+/* Adjust padding for navigation links */
+.navbar-light ul li {
+  list-style: none;
+  text-align: center; /* Center-align the text */
+}
+
+/* Adjust hover color */
+.navbar-light ul li a:hover {
+  color: red; /* Change the text color on hover */
+}
+
+
+
+/* home */
+.home{
+    display: flex;
+    align-items: center;
+   min-height: 100vh;
+   height: 600px;
+   padding: 60px;
+   margin-top: -100px;
+   
+    
+}
+#home::before{
+    content: "";
+    position: absolute;
+    /* transform: translate(-100%, -100%); */
+    background: url('img/fabi\ salon\ 2.jpeg') no-repeat center center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+     height: 100vh;
+     width: 100%;
+     z-index: -1;
+     opacity: 0.89;
+     animation: sami 25s infinite ;
+}
+
+.home-text h3{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--heading-color);
+    /* text-shadow: 2px 2px 2px white; */
+  }
+  .home-text h1 {
+    font-size: 6.2rem;
+    color: var(--second-color);
+    font-weight: bolder;
+    text-shadow: 11px 11px 21px black;
+  }
+.home-text p{
+    font-size: 1rem;
+    color: var(--second-color);
+    margin: 5px 0 8px;
+    font-weight: 600;
+}
+.about-text .about-btn{
+  margin-top: 50px;
+  margin-left: 25px;
+}
+  .home .btn {
+  
+    width: 13em;
+    height: 4em;
+    border-radius: 30em;
+    background-color: var(--heading-color);
+    font-size: 15px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 0px 16px black, 0px 0px 0px black
+  }
+
+  .home .btn::before{
+    content: '';
+    width: 0;
+    height: 4em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,
+     #96098b 0%, #fcb6e7 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+   .home .btn:hover::before{
+   width: 13.2em;
+  }
+
+  /* Animation code  */
+  .sile_up{
+    animation: slidetop 2s ease forwards;
+  
+    }
+    .sile_left{
+    animation: slideleft 3s ease forwards;
+    }
+    .slide_bottom{
+    animation: slidebottom 2s ease forwards;
+    }
+    /* Welcome Animation  */
+    @keyframes slidetop {
+      0% {
+        transform: translateY(-600px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  
+    /* Beauth Salon animation  */
+    @keyframes slideleft {
+      0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+  
+    /* about and button animation  */
+    @keyframes slidebottom {
+      0% {
+        transform: translateY(120px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    /* about section */
+
+    section {
+        padding: 20px 70px;
+    }
+
+    .about .heading {
+        text-align: center;
+    }
+    .about .heading h1{
+        font-weight: bolder;
+        color: var(--second-color);
+        font-size: 50px
+    }
+
+    .about .container {
+        display: flex;
+        margin-top: 2.5rem;
+    }
+    .about-img {
+        flex: 1 ;
+      }
+      .about-img img{
+        width: 100%;
+        height: 90%;
+        box-sizing: border-box;
+        box-shadow: 8px 8px 5px gray;
+      }
+      .about-text{
+        flex: 1 ;
+        padding-right: 7px;
+      }
+  .about-text p{
+    font-size: 16px;
+    margin: 10px;
+    text-align: justify;
+  }
+  .about-text h1 {
+      font-size: 45px;
+      font-weight: bolder;
+      color: var(--heading-color);
+  }
+
+  .about .btn {
+  
+    width: 13em;
+    height: 4em;
+    border-radius: 30em;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  }
+
+  .about .btn::before{
+    content: '';
+    width: 0;
+    height: 4em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,
+     #96098b 0%, #fcb6e7 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+   .about .btn:hover::before{
+   width: 13.2em;
+  }
+
+
+  /* service section */
+
+  #service{
+    content: "";
+    background: url('img/service\ hair\ back\ 2.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.90;
+  }
+  .service .heading {
+    text-align: center;
+    margin-top: 35px;
+
+  }
+  .service .heading h1{
+    font-size: 45px;
+    font-weight: bolder;
+    color: white;
+  }
+  .service .heading span{
+    color: white;
+    font-weight: bold;
+
+  }
+
+  .main-box{
+    display: flex;
+    background-color: white;
+    margin-top: 26px;
+    justify-content: center;
+  }
+
+  .main-box .service-img {
+    padding: 36px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  } 
+  .main-box .service-img .img-heading {
+    background-color: var(--heading-color);
+    color: #fff;
+    padding: 25px 60px 27px 60px;
+    border-radius: 5px;
+    margin-top: -22px;
+  }
+  .main-box .service-img .img-heading h2{
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    
+  }
+
+  /* gallery section */
+  
+.gallery {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.gallery .heading {
+  margin-bottom: 30px;
+}
+.gallery .heading h1 {
+  /* margin-bottom: 30px; */
+  color: var(--heading-color);
+  font-size: 45px;
+  font-weight: bolder;
+}
+.gallery .heading span{
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.gallery-img {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.gallery-img:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-img:before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.gallery-img:hover:before {
+  opacity: 1;
+}
+       /* expert section */
+
+       .expert{
+        text-align: center;
+        margin-top: 45px;
+      
+
+       }
+       .expert-container{
+       justify-content: center;
+        align-items: center;
+        text-align: center;
+       }
+
+       .expert .heading {
+        margin-bottom: 30px;
+      }
+      .expert .heading h1 {
+       
+        color: var(--heading-color);
+        font-size: 45px;
+        font-weight: bolder;
+      }
+      .expert .heading span{
+        color: var(--heading-color);
+        font-weight: bold;
+      }   
+
+    .expert-main-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      /* flex-direction: row; */
+    }
+    
+     .padding-expert{
+       padding: 10px; 
+     
+    } 
+
+    .expert-img{
+      overflow: hidden;
+      
+    }
+    .expert-img img{
+      width: 270px;
+      height: 360px;
+      transition: all 0.5s ease-in-out 0s;
+  }
+    
+   .expert-img .social-links{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: -360px;
+      left: 0;
+      right: auto;
+      background-color: #d65ab1;
+      padding: 15px 35px 15px 9px;
+      width: 10%;
+      transform: translateX(-168px);
+      opacity: 0;
+    transition: .5s;
+    }
+
+    .social-links a{
+      font-size: 1.2em;
+      padding: 6px;
+    }
+.expert-img:hover .social-links{
+  transform: translateX(0px);
+  opacity: 1;
+  transform: scale(1.1);
+} 
+ .expert-img:hover img{
+  transform: scale(1.1);
+ 
+
+} 
+
+.expert-content{
+  background-color: #823596;
+  padding: 18px 12px 12px 12px;
+  position: relative;
+  top: -175px;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out 0s;
+}
+.expert-content h5{
+  padding: 9px;
+
+}
+.expert-content h5 a{
+  font-weight: lighter;
+  color: #fff;
+  font-size: 26px;
+  font-style: oblique;
+}
+.expert-content p{
+  color: lightgray;
+}
+.expert-content:hover{
+  background-color: #d65ab1;
+  
+}
+
+/* APPOINTMENT SECTION  */
+
+ .appointment{
+  display: flex;
+  align-items: center;
+ min-height: 20vh;
+ height: 150px;
+    margin-top: -120px;
+    padding: 0;
+   
+  
+}
+.appointment::before{
+  content: '';
+  display: flex;
+  background: url('img/appointmentbg\ img.jpg')no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 8em;
+ width: 100%;
+ /* margin: 0;
+ padding: 0; */
+}
+.appo-box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 65px;
+} 
+
+.appo-box .appo-text{
+  position: relative;
+ right: -18px;
+ 
+}
+.appo-text h3{
+  font-size: 36px;
+  color: #fff;
+  font-weight: calc(1.9);
+  font-family: 'Montserrat', sans-serif;
+}
+.appo-box .appo-book{
+  position: relative;
+  left: 230px;
+  
+}
+.appo-book a{
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #6f2d80;
+  border-radius: 35px;
+  padding: 22px 45px;
+
+  }
+  .appointment .btn {
+    margin-left: 18rem;
+    width: 21em;
+    height: 4em;
+    border-radius: 30em;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 0px 53px gray, 0px 0px 10px black;
+  }
+
+  .appointment .btn::before{
+    content: '';
+    width: 0;
+    height: 4em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,
+     #96098b 0%, #fcb6e7 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+  }
+   .appointment .btn:hover::before{
+   width: 21em;
+  }
+
+
+  /* contact section */
+  .contact{
+    padding: 60px 69px;
+    position: relative;
+    overflow: hidden;
+    
+  }
+
+  .contact-container {
+    max-width: 715px;
+}
+  .contact-row{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    align-items: center;
+    
+    
+  }
+                    /* <<<<<<<form>>>>>>*/
+.contact .contact-form{
+    
+    padding-left: 90px;
+  }
+  .form-title{
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .form-title h1{
+    color: var(--heading-color);
+    margin: 0;
+    font-weight: bold;
+    text-transform: none !important;
+    font-size: 30px !important;
+  }
+.form-title::after{
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  
+  background: var(--second-color);
+  height: 2px;
+  width: 70px;
+}
+.contact .contact-form p{
+  color: black;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+.form{
+  display: block;
+}
+.form .inputs-row{
+  display: flex;
+  flex-wrap: wrap;
+ 
+  margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 180px;
+}
+
+.marginb{
+       margin-bottom: 1rem;
+       padding: 9px;
+}
+.form .inputs-row .input-control{
+  height: 50px;
+  width: 100%;
+  padding-left: 15px;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  border: none;
+  border: 1px solid #f2f0fa;
+  background: none;
+  color: #000;
+  font-size: 14px;
+}
+.input-control{
+  display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.contact-form textarea{
+  padding: 8px 0px 0px 20px;
+   border: 1px solid #ced4da;
+  font-size: 1rem;
+  height: 160px;
+  width: 445px;
+  /* transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+}
+.contact .btn {
+  
+  width: 13em;
+  height: 4em;
+  border-radius: 30em;
+  font-size: 15px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+  -6px -6px 12px #ffffff;
+}
+
+.contact .btn::before{
+  content: '';
+  width: 0;
+  height: 4em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right,
+   #96098b 0%, #fcb6e7 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+ .contact .btn:hover::before{
+ width: 13.2em;
+}
+
+
+
+
+
+
+     /* info-section */
+     .info{
+      margin-left: -320px;
+     }
+     .info-box {
+      position: relative;
+      left: 330px;
+  }
+.info-box{
+  
+  padding: 60px 0px 24px 50px;
+  background: url('img/contact-bg-img.jpg')no-repeat top;
+  background-size: cover;
+}
+.info-title{
+  margin-bottom: 60px;
+  position: relative;
+}
+.info-title h1{
+  font-size: 50px;
+  color: #fff; 
+  margin: 0;
+  font-weight: bold;
+}
+.info-title::after{
+  content: "";
+    width: 56px;
+    height: 2px;
+    background-color: #dfc7d7;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+.info-title h1 span{
+  display: block;
+}
+.info .info-list{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -1rem;
+  margin-top: -13px;
+  padding: 0px;   
+   height: 22em;
+  width: 31em;
+
+}
+
+.list-box{
+  display: flex;
+  flex-direction: row;
+  margin: 25px 184px 25px 0px;
+  color: #fff;
+}
+
+
+
+.list-box p span{
+  display: block;
+  line-height: 33px;
+
+}
+
+.info-list .list-icon{
+padding: 0px 34px 5px 0px;
+ }
+
+
+ /* >>>>>footer section<<<<<< */
+.footer{
+  background: url('img/footer-bg-img.jpg')no-repeat top;
+  background-size: cover;
+  padding: 50px 0 20px 0;
+}
+.footer .footer-container{
+  max-width: 1300px;
+  color: #fff;
+}
+.footer .footer-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+          /* logo & p  */
+.footer .colm-logo-parah{
+  
+  padding: 20px;
+}
+.footer .footer-logo img{
+  height: 186px;
+   margin: -65px 6px;
+}
+.footer p{
+  font-size: 14px;
+  color: #bcc5d0;
+  margin-top: 15px;
+  line-height: 26px;
+  
+}
+
+/* Quick links  */
+.quick-links{
+  margin-left: 8px;
+
+}
+.footer .quick-links h3{
+  font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.footer-links{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  
+}
+.quick-links .footer-links li{
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: row;
+}
+.footer-links li i{
+  font-weight: 600;
+    /* font-family: 'Font Awesome 5 Free'; */
+    padding-right: 10px;
+    color: #adb6c0;
+    font-size: 14px;
+}
+.footer-links li a{
+  font-size: 15px;
+    color: #bcc5d0;
+}
+.footer-links li a:hover{
+  color: #d65ab1;
+  transition: all .3s ease;
+}
+
+     /* opening hours section  */
+.timing-box{
+margin-left: 80px;
+margin-bottom: 3px;
+}
+.timing-box h3{
+  font-size: 18px;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  margin-bottom: 33px;
+}
+.opening-timing{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.opening-timing li{
+  padding: 0.3rem;
+  font-size: 15px;
+  color: #bcc5d0;
+  border-bottom: 1px solid #484848;
+  padding: 6px 0;
+}
+.opening-timing li span{
+  float: right;
+  padding-left: 7rem;
+}
+
+/* footer info  */
+.footer-info{
+  margin-left: 115px;
+  margin-bottom: 23px;
+}
+.footer-info h3{
+  font-size: 18px;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  margin-bottom: 35px;
+}
+.footer-address{
+  padding: 0;
+  
+}
+.footer-address li{
+  padding: 0.3rem;
+  font-size: 15px;
+  color: #bcc5d0;
+  margin: 0;
+    padding-bottom: 15px;
+ display: flex;
+}
+.footer-address li> i{
+  vertical-align: top;
+    font-size: 25px;
+    color: #bcc5d0;
+    width: 28px;
+    padding-top: 0px;
+}
+.footer-address li .bi-envelope-fill{
+  font-size: 18px;
+  padding: 2px;
+}
+.footer-address li .bi-telephone-fill{
+  font-size: 30px;
+}
+.footer-address li .fs-fotr-num{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.footer-info li span{
+ padding-left: 0.6rem;
+}
+
+
+.footer-info .footer-icons{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footer-info .footer-icons li{
+  display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 2px;
+}
+.footer-icons li a{
+  border: 1px solid #fff;
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  line-height: 38px;
+  transition: all .3s ease;
+}
+.footer-icons .footer-fb{
+  font-size: 36px;
+  border: 1px solid blanchedalmond;
+  background-color: #fff;
+  color: rgb(21, 39, 100);
+}
+.footer-icons .footer-twtr{
+background-color: #13889c;
+}
+.footer-icons .footer-insta{
+  background-color: #ec1733;
+}
+.footer-icons .footer-yt{
+  background-color: red;
+}
+.footer-icons li a:hover{
+transition: all .3s ease;
+}
+
+    /* copy rights */
+.copy-rights{
+  background-color: rgb(4, 4, 27);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 0;
+  color: #d0cfdb;
+}
+.copy-rights .copy-text{
+  padding: 5px;
+  
+  font-family: 'Times New Roman', Times, serif;
+}
+.copy-text h4{
+  font-size: 14px;
+}
+
+.copy-text h4 span{
+  font-size: 17px;
+  color: var(--heading-color);
+}
+
+.copy-right-icons{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+.copy-right-icons li{
+    display: inline-block;
+    padding: 15px;
+}
+.copy-right-icons li a{
+  border: 1px solid #fff;
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  line-height: 38px;
+}
+
+
+/* @media (min-width: 640px){
+  .navbar-light .navbar-icon{
+    display: block;
+  }
+  
+  .navbar-light .check-btn{
+    display: none;
+  }
+  
+  
+  .navbar-light .check-btn:checked{
+    display: block;
+  }
+  #home::before{
+    max-width: 100%;
+    /* height: 100vh; */
+    /* background: url('img/fabi\ salon\ 2.jpeg')repeat no-repeat center center/cover; */
+    

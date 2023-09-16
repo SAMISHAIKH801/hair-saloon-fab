@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <nav ><button id="Logutbtn">logout</button></nav>
+        <h1>appoiments</h1>
+        <div id="appoint-div">
+           
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            axios.get('/appoitments')
+            .then((res)=>{console.log(res.data)
+            
+                const data = res.data
+                let isdata;
+                data.map((each)=>{
+
+                    isdata += ` <div style="border-radius: 12px; padding: 20px; background-color: white; max-width: 600px;">
+                <h1 style="font-weight: 500; margin: 0 0 10px 0; ">
+                   ${each.firstName ," ", each.lastName}
+                </h1>
+                <p>${each.messege}</p>
+                <div style="display: flex; gap:10px;"> 
+                    <a href="${each.email}">email</a>
+                    <a href="${each.phno}">03251452080</a>
+                </div>
+            </div>`
+
+                })
+
+                document.getElementById("appoint-div").innerHTML = isdata
+            
+            })
+            .catch((e)=>{console.log(e)})
+        })
+
+
+
+        document.getElementById("Logutbtn").addEventListener("click",(e)=>{
+
+        e.preventDefault()
+
+        axios.get("/logout")
+        .then((res)=>{
+            window.location.href = '/login'
+        })
+        .catch((e)=>{
+            console.log(e)
+        })
+        })
+    </script>
+</body>
+</html>
